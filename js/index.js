@@ -7,7 +7,7 @@ function print(message) {
   outputDiv.innerHTML = message;
 }
 
-function getwordReport( word ) {
+function getwordReport( word) {
   var report = '<h2>Word: ' + word.id + '</h2>';
   report += '<p>hasAlreadyCollected: ' + word.hasAlreadyCollected + '</p>';
   report += '<p>Wordsticker: ' + word.Wordsticker + '</p>';
