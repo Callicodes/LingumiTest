@@ -4,7 +4,7 @@ let searchButton = document.getElementById('search');
 let resetButton = document.getElementById('reset');
 let foundStudent = '';
 let count = 0;
-let _INIT = {
+let _INIT = {//NODE BUILDER
         table({item, key}) {
             count++;
             return `
@@ -17,16 +17,19 @@ let _INIT = {
             <td><button onclick="_INIT.deleteRow(${key})">delete</button></td>
             </tr>
             `
-        },
+        },//DELETE KEY
         deleteRow(key) {
             let tr = document.getElementById(key);
             outputDiv.removeChild(tr);
-        },
+        },//PRINTING INFO TO THE PAGE
         print(student) {
             let reports;
             reports = this.table(student);
             outputDiv.innerHTML += reports;
         },
+
+        //SOLUTION
+
         startSearching(foundStudent = '') {
             count = 0;
             while (true) {
@@ -45,14 +48,15 @@ let _INIT = {
         }
 
     }
-;
-
+;//SEARCH FUNCTION
 searchButton.addEventListener('click', () => {
     outputDiv.innerHTML = '';
     setTimeout(() => {
         _INIT.startSearching();
     }, 100);
 });
+//RESET FUNCTION
+
 resetButton.addEventListener('click', () => {
     outputDiv.innerHTML = '';
 });
